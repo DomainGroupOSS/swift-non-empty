@@ -15,13 +15,13 @@ What if, when decoding the model, you could encode _in the model property types_
 ### Carthage
 
 ```
-git "DomainGroupOSS/swift-non-empty" "0.1.0"    
+git "DomainGroupOSS/swift-non-empty" "0.1.1"    
 ```
 
 ### Cocoapods
 
 ```
-pod "SwiftNonEmpty", "0.1.0" 
+pod "SwiftNonEmpty", "0.1.1" 
 ```
 
 ## Usage
