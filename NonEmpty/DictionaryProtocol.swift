@@ -10,7 +10,7 @@ import Foundation
 
 /// We need a protocol which defines Swift.Dictionary-like behaviour in order to be able to do things like:
 /// - extend types which are generic over Dictionaries, i.e. `extension SomeGenericType where SomeGenericType.GenericArg: DictionaryProtocol`
-protocol DictionaryProtocol: Collection, ExpressibleByDictionaryLiteral where Key: Hashable {
+public protocol DictionaryProtocol: Collection, ExpressibleByDictionaryLiteral where Key: Hashable {
 
     subscript(key: Key) -> Value? { get set }
     subscript(key: Key, default defaultValue: @autoclosure () -> Value) -> Value { get set }

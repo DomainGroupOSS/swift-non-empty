@@ -9,7 +9,7 @@
 import Foundation
 
 /// Allows a `NonEmpty` to return a `NonEmpty` when mapped over
-extension NonEmpty {
+public extension NonEmpty {
 
     func map<T>(_ transform: (Self.Element) throws -> T) rethrows -> Array<T>.NonEmpty {
         return try self.map(transform).nonEmpty!
@@ -18,7 +18,7 @@ extension NonEmpty {
 
 /// Allows a `NonEmpty` which contains a `Dictionary` to act like a `Dictionary` itself.
 /// Warning: Not exhastive; will need to be extended.
-extension NonEmpty where Contained: DictionaryProtocol {
+public extension NonEmpty where Contained: DictionaryProtocol {
 
     subscript(key: Contained.Key) -> Contained.Value? { return self.contained[key] }
 
@@ -27,11 +27,11 @@ extension NonEmpty where Contained: DictionaryProtocol {
 
 /// Allows a `NonEmpty` which contains a `String` to act like a `String` itself.
 /// Warning: not implemented yet; will need to be extended.
-extension NonEmpty where Contained == String {
+public extension NonEmpty where Contained == String {
 }
 
 /// Allows the use of + to concatenate a `NonEmpty` collection with an Array
-extension NonEmpty {
+public extension NonEmpty {
 
     //swiftlint:disable:next syntactic_sugar
     static func + <T>(lhs: Self, rhs: Array<T>) -> Array<T>.NonEmpty where Element == T {
@@ -40,7 +40,7 @@ extension NonEmpty {
 }
 
 /// Allows the use of + to concatenate two `NonEmpty` Arrays
-extension NonEmpty where Contained: RandomAccessCollection {
+public extension NonEmpty where Contained: RandomAccessCollection {
 
     static func + <T>(lhs: Self, rhs: Self) -> Array<T>.NonEmpty where Element == T {
         return lhs + Array(rhs)

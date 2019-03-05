@@ -10,7 +10,7 @@ import Foundation
 
 /// Protocols
 
-protocol NonEmpty: Collection {
+public protocol NonEmpty: Collection {
 
     associatedtype Contained: Collection
 
@@ -18,55 +18,55 @@ protocol NonEmpty: Collection {
     var knownFirst: Self.Element { get }
 }
 
-protocol NonEmptyBidirectional: NonEmpty, BidirectionalCollection where Contained: BidirectionalCollection {
+public protocol NonEmptyBidirectional: NonEmpty, BidirectionalCollection where Contained: BidirectionalCollection {
 
     var knownLast: Self.Element { get }
 }
 
-protocol NonEmptyRandomAccess: NonEmptyBidirectional, RandomAccessCollection where Contained: RandomAccessCollection {}
+public protocol NonEmptyRandomAccess: NonEmptyBidirectional, RandomAccessCollection where Contained: RandomAccessCollection {}
 
 /// Convenience converters for existing Collection types
 
-extension Collection {
+public extension Collection {
 
     var nonEmpty: NonEmptyCollection<Self>? { return NonEmptyCollection<Self>(collection: self) }
 }
 
-extension BidirectionalCollection {
+public extension BidirectionalCollection {
 
     var nonEmpty: NonEmptyBidirectionalCollection<Self>? { return NonEmptyBidirectionalCollection<Self>(collection: self) }
 }
 
-extension RandomAccessCollection {
+public extension RandomAccessCollection {
 
     var nonEmpty: NonEmptyRandomAccessCollection<Self>? { return NonEmptyRandomAccessCollection<Self>(collection: self) }
 }
 
 // Convenience typealiases for existing concrete Collection types
 
-extension Array {
+public extension Array {
 
     typealias NonEmpty = NonEmptyRandomAccessCollection<[Element]>
 }
 
-extension String {
+public extension String {
 
     typealias NonEmpty = NonEmptyBidirectionalCollection<String>
 }
 
-extension Dictionary {
+public extension Dictionary {
 
     typealias NonEmpty = NonEmptyCollection<[Key: Value]>
 }
 
 /// Default extensions
 
-extension NonEmpty {
+public extension NonEmpty {
 
     var knownFirst: Element { return self.first! }
 }
 
-extension NonEmptyBidirectional {
+public extension NonEmptyBidirectional {
 
     var knownLast: Element { return self.last! }
 }
