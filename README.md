@@ -24,6 +24,8 @@ git "DomainGroupOSS/swift-non-empty" "0.1.0"
 pod "SwiftNonEmpty", "0.1.0" 
 ```
 
+[!](/releases/latest)
+
 ## Usage
 
 ### Before
