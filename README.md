@@ -24,7 +24,7 @@ git "DomainGroupOSS/swift-non-empty" "0.1.0"
 pod "SwiftNonEmpty", "0.1.0" 
 ```
 
-[!](/releases/latest)
+http://www.github.com/DomainGroupOSS/swift-non-empty/releases/latest
 
 ## Usage
 
