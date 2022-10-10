@@ -1,6 +1,9 @@
 # NonEmpty
 A small library to allow you to express the non-emptiness of a collection _through its type_.
 
+## Status
+This framework is no longer being maintained.
+
 ## Background
 **Other functional languages get [dependent types](https://en.wikipedia.org/wiki/Dependent_type), why not Swift?**
 
@@ -105,7 +108,3 @@ func doSafeThings(with model: OnlyValidIfPopulatedModel) throws {
     print(lastCharacterOfFirstString)
 }
 ```
-
-## To do
-- Support for Swift Package Manager
-- Support for conformance of `NonEmpty` types to `Codable` [Requires Swift 5]
